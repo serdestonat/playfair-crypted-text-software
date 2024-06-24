@@ -14,7 +14,7 @@ def playfair_decrypt(ciphertext, table):
             plaintext += table[row1][col2] + table[row2][col1]
     return plaintext
 
-def desifreli_metin_temizle(metin, yerine_koyulan="S"):
+def desifreli_metin_temizle(metin, yerine_koyulan="&"):
     temizlenmis_metin = ""
     skip_next = False
     for i in range(len(metin) - 1):

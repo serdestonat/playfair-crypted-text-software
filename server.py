@@ -2,9 +2,10 @@ import socket
 import threading
 from playfair import playfair_alfabe_olustur, playfair_tablosu, key
 from sifrele import playfair_encrypt
+from socket1 import wifi_ipv4_address
 
 FORMAT='utf-8'
-HOST = socket.gethostbyname(socket.gethostname())
+HOST = '0.0.0.0'
 PORT = 5050
 KULLANICI_LIMITI = 5
 aktif_kullanicilar = []

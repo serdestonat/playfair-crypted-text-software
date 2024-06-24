@@ -4,9 +4,9 @@ import tkinter as tk
 from tkinter import scrolledtext
 from tkinter import messagebox
 from socket1 import wifi_ipv4_address
-from playfair import playfair_alfabe_olustur, playfair_tablosu
+from playfair import playfair_alfabe_olustur, playfair_tablosu, metin_hazirla
 from desifrele import playfair_decrypt, desifreli_metin_temizle
-from server import key
+from server import key, playfair_encrypt
 
 HOST = wifi_ipv4_address
 PORT = 5050
@@ -27,6 +27,7 @@ def mesaj_ekle(mesaj):
     m_kutusu.config(state=tk.NORMAL)
     m_kutusu.insert(tk.END, mesaj + '\n')
     m_kutusu.config(state=tk.DISABLED)
+    m_kutusu.see(tk.END)  # Automatically scroll to the bottom to show the latest message.
 
 def baglan():
     try:
@@ -53,7 +54,7 @@ def baglan():
 
 def mesaj_gonder(event=None):
     mesaj = m_textbox.get()
-    if mesaj != '':
+    if mesaj.strip() != '':
         kullanici.sendall(mesaj.encode())
         m_textbox.delete(0, 'end')
     else:

@@ -23,7 +23,7 @@ def playfair_alfabe_olustur(key):
             playfair_alfabe += char
     return playfair_alfabe
 
-def metin_hazirla(metin, yerine_koyulan='S'):
+def metin_hazirla(metin, yerine_koyulan='&'):
     metin = metin.upper().replace(" ", "")
     hazir_metin = ""
     i = 0
@@ -55,7 +55,7 @@ def playfair_tablosu(alfabe):
 
 
 # Kullanıcıdan anahtar kelimeyi alın
-key = input("Anahtar kelimeyi girin: ")
+key = input("Anahtar kelimeyi girin: ") # !!! ---- default bir key koyup daha sonra key doğrulama koyabiliriz ---- !!!
 
 # Playfair alfabesini oluşturun
 playfair_alfabe = playfair_alfabe_olustur(key)
