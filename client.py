@@ -8,7 +8,7 @@ from playfair import playfair_alfabe_olustur, playfair_tablosu, metin_hazirla
 from desifrele import playfair_decrypt, desifreli_metin_temizle
 from server import key, playfair_encrypt
 
-HOST = wifi_ipv4_address
+HOST = '192.168.1.108'
 PORT = 5050
 FORMAT = 'utf-8'
 
